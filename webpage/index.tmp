@@ -1,0 +1,275 @@
+<html>
+<head>
+	<title>Weather</title>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<meta http-equiv="refresh" content="10" />
+	<link rel="stylesheet" href="demos.css" type="text/css" media="screen" />
+    
+    <script src="./libraries/RGraph.common.core.js" ></script>
+    <script src="./libraries/RGraph.thermometer.js" ></script>
+    <script src="./libraries/RGraph.odo.js" ></script>
+    <script src="../libraries/RGraph.common.dynamic.js" ></script>
+    <script src="../libraries/RGraph.gauge.js" ></script>   
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <!--[if lt IE 9]><script src="../excanvas/excanvas.js"></script><![endif]-->
+
+</head>
+
+<body>
+
+<!--code and shit -->
+	<script>
+        $(document).ready(function ()
+        {
+            var odo = new RGraph.Odometer({
+                id: 'gust',
+                min: 0,
+                max: 10,
+                value: ddGustdd,
+                
+            }).draw();
+        })
+    </script>
+    
+	<script>
+        $(document).ready(function ()
+        {
+            var odo = new RGraph.Odometer({
+                id: 'wind',
+                min: 0,
+                max: 10,
+                value: ddWinddd,
+                
+            }).draw();
+        })
+    </script>
+    <script>
+        $(document).ready(function ()
+        {
+            var thermometer = new RGraph.Thermometer({
+                id: 'therm',
+                min: 0,
+                max: 40,
+                value: ddTempdd
+            }).draw()
+        })
+    </script>
+    <script>
+        $(document).ready(function ()
+        {
+            var thermometer = new RGraph.Thermometer({
+                id: 'humid',
+                min: 0,
+                max: 100,
+                value: ddhumiddd,
+                options: {
+                    background: {
+                        color: 'Gradient(white:#00a)'
+                    }
+				}
+            }).draw()
+        })
+    </script>
+
+    <script>
+        $(document).ready(function ()
+        {
+            var gauge = new RGraph.Gauge({
+                id: 'rfallyear',
+                min: 0,
+                max: 1000,
+                value: ddRFallYeardd,
+                options: {
+                    background: {
+                        color: 'Gradient(white:#00a)'
+                    },
+                    text: {
+                        color: 'white'
+                    },
+                    tickmarks: {
+                        big: {
+                            color: 'white'
+                        },
+                        small: {
+                            color: 'white'
+                        }
+                    },
+                    red: {
+                        color: 'rgba(0,0,0,0)'
+                    },
+                    yellow: {
+                        color: 'rgba(0,0,0,0)'
+                    },
+                    border: {
+                        inner: '#00c',
+                        outer: 'Gradient(blue:blue:blue:blue:blue:blue:blue:blue:blue:blue:blue:blue:blue:blue:blue:blue:blue:blue:black)'
+                    },
+                    adjustable: false
+                }
+            }).draw();
+        })
+    </script>
+
+
+    <script>
+        $(document).ready(function ()
+        {
+            var gauge = new RGraph.Gauge({
+                id: 'rfallmonth',
+                min: 0,
+                max: 100,
+                value: ddRFallmonthdd,
+                options: {
+                    background: {
+                        color: 'Gradient(white:#00a)'
+                    },
+                    text: {
+                        color: 'white'
+                    },
+                    tickmarks: {
+                        big: {
+                            color: 'white'
+                        },
+                        small: {
+                            color: 'white'
+                        }
+                    },
+                    red: {
+                        color: 'rgba(0,0,0,0)'
+                    },
+                    yellow: {
+                        color: 'rgba(0,0,0,0)'
+                    },
+                    border: {
+                        inner: '#00c',
+                        outer: 'Gradient(blue:blue:blue:blue:blue:blue:blue:blue:blue:blue:blue:blue:blue:blue:blue:blue:blue:blue:black)'
+                    },
+                    adjustable: false
+                }
+            }).draw();
+        })
+    </script>
+        <script>
+        $(document).ready(function ()
+        {
+            var gauge = new RGraph.Gauge({
+                id: 'rfallday',
+                min: 0,
+                max: 1000,
+                value: ddRFalldaydd,
+                options: {
+                    background: {
+                        color: 'Gradient(white:#00a)'
+                    },
+                    text: {
+                        color: 'white'
+                    },
+                    tickmarks: {
+                        big: {
+                            color: 'white'
+                        },
+                        small: {
+                            color: 'white'
+                        }
+                    },
+                    red: {
+                        color: 'rgba(0,0,0,0)'
+                    },
+                    yellow: {
+                        color: 'rgba(0,0,0,0)'
+                    },
+                    border: {
+                        inner: '#00c',
+                        outer: 'Gradient(blue:blue:blue:blue:blue:blue:blue:blue:blue:blue:blue:blue:blue:blue:blue:blue:blue:blue:black)'
+                    },
+                    adjustable: false
+                }
+            }).draw();
+        })
+    </script>
+    <script>
+        $(document).ready(function ()
+        {
+            var gauge = new RGraph.Gauge({
+                id: 'rainrate',
+                min: 0,
+                max: 100,
+                value: ddrainratedd
+            }).draw();
+        })
+    </script>
+
+
+<!--end of code and shit -->
+<div align=center>
+	<h1>ddmaininfodd</h1>
+<table>
+	<tr>
+		<td align=center width=200>
+			<canvas id="therm" width="100" height="250">[No canvas support]</canvas>
+		</td>
+		<td align=center width=200>
+			<canvas id="humid" width="100" height="250">[No canvas support]</canvas>
+		</td>
+
+		<td align=center>
+			<canvas id="gust" width="200" height="250">[No canvas support]</canvas>
+		</td>
+		<td align=center>
+			<canvas id="wind" width="200" height="250">[No canvas support]</canvas>
+		</td>
+	</tr>
+	<tr>
+		<td align=center>
+			Temp - ddTempdd&deg;C
+		</td>
+		<td align=center>
+			Humidity - ddhumiddd%
+		</td>
+		
+		<td align=center>
+			Wind Gust Speed - ddGustdd mph
+		</td>
+		<td align=center>
+			Wind AVG Speed - ddWinddd mph
+		</td>
+	</tr>
+</table>
+ 
+
+<table>
+	<tr>
+		<td align=center>
+		<canvas id="rfallyear" width="200" height="200">[No canvas support]</canvas><br />
+		</td>
+		<td align=center>
+		<canvas id="rfallmonth" width="200" height="200">[No canvas support]</canvas><br />
+		</td>
+		<td align=center>
+		<canvas id="rfallday" width="200" height="200">[No canvas support]</canvas><br />
+		</td>
+
+		<td align=center>
+		<canvas id="rainrate" width="200" height="200">[No canvas support]</canvas><br />
+		</td>
+		</tr>
+		<td align=center width=200>
+			Yearly Rainfall - ddRFallYearddmm
+		</td>
+		<td align=center width=200>
+			Monthly Rainfall - ddRFallmonthddmm
+		</td>
+		<td align=center width=200>
+			Daily Rainfall - ddRFalldayddmm
+		</td>
+		<td align=center width=200>
+			Rain Rate - ddrainrateddmm
+		</td>
+	</tr>
+</table>
+
+</div>
+
+</body>
+
+</html>
